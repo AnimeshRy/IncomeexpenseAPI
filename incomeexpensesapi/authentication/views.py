@@ -1,5 +1,3 @@
-import imp
-from django.shortcuts import render
 from rest_framework import generics, status, views, permissions
 from rest_framework.response import Response
 from .models import User
@@ -12,11 +10,13 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.urls import reverse
 from django.contrib.sites.shortcuts import get_current_site
 from .serializers import EmailVerificationSerializer, LoginSerializer, LogoutSerializer, RegisterSerializer
+from .renderers import UserRenderer
 
 
 class RegisterView(generics.GenericAPIView):
 
     serializer_class = RegisterSerializer
+    renderer_classes = (UserRenderer, )
 
     def post(self, request):
         user = request.data
