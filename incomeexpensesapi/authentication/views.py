@@ -97,7 +97,7 @@ class LogoutAPIView(generics.GenericAPIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class RequestPasswordView(generics.GenericAPIView):
+class RequestPasswordResetEmail(generics.GenericAPIView):
     serializer_class = ResetPasswordEmaiLRequestSerializer
 
     def post(self, request):
