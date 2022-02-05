@@ -10,6 +10,9 @@ djangorestframework-simplejwt = "*"
 drf-yasg = "*"
 django-cors-headers = "*"
 faker = "*"
+google-api-python-client = "*"
+facebook-sdk = "*"
+python-twitter = "*"
 
 [dev-packages]
 
