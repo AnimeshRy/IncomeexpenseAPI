@@ -19,6 +19,8 @@ schema_view = get_schema_view(openapi.Info(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('authentication.urls')),
+    path('social_auth/', include(('social_auth.urls', 'social_auth'),
+                                 namespace="social_auth")),
     path('expenses/', include('expenses.urls')),
     path('income/', include('income.urls')),
     path('', schema_view.with_ui('swagger', cache_timeout=0),
